@@ -30,6 +30,9 @@ async function getCharacters( queryParameterName, queryParameterAge, queryParame
       through: {
         attributes: [],
       },
+      include: {
+        model: Genre,
+      },
     },
   });
   if (!allCharacters) {
@@ -66,6 +69,9 @@ async function getCharactersById(idCharacter) {
       },
       through: {
         attributes: [],
+      },
+      include: {
+        model: Genre
       },
     },
   });

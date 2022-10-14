@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const { getMovieSeries, postMovieSeries, updateMovie } = require('../controllers');
+const { getMovieSeries, postMovieSeries, updateMovie, deleteMovie, getMoviesById } = require('../controllers');
 
 const router = Router();
 
@@ -46,12 +46,22 @@ router.put("/:id", async (req, res) => {
 router.delete("/:id", async (req, res) => {
 	try {
 		const { id } = req.params;
-		return res.status(202).json(await deleteCharacter(id))  
+		return res.status(202).json(await deleteMovie(id))  
 	  
 	} catch (err) {
 	  res.status(404).json(err.message);
 	}
   });
 
+router.get('/:id', async (req, res) => {
+	let {id} = req.params
+	try{
+		if(id){
+			return res.status(201).json(await getMoviesById(id))
+		}
+	} catch (error){
+		return res.status(404).json(error.message)
+	}
+})
 
 module.exports = router;

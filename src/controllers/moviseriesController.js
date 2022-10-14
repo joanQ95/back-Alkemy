@@ -191,46 +191,24 @@ async function updateMovie(id, title, image, creationAge, rated, characters){
     if (!characters.length) {
       errores.push("characters");
     } else {
-      await Movieserie.update( { characters }, { where: { id } });
+      let movieUpdated = await Movieserie.findOne( { where: { id }, include:{ model: Character } })
+      let nameCharacter = characters.map(character=> character.name)
+			await Genre.bulkCreate(characters, {ignoreDuplicates: true})
+			let characterDb = await Character.findAll({
+					where: { name: nameCharacter }
+			})
+			movieUpdated.addCharacter(characterDb)
     }
   }
   if (image) {
     if (!/^[a-zA-Z0-9\s_\-\.\'\!\&\@\/\:\$]+$/.test(image)) {
       errores.push("image");
     } else {
-      Movieserie.findOne( { where: { id }, include: { model: Character } })
-      .then(movieserie=>{
-        console.log(movieserie)
-        return movieserie.dataValues.Character.update({ image })
-        .then(function (result) {
-            return result;
-        })
-      })
+      await Movieserie.update( { image }, { where: { id } });
     }
   }
   
-//   include:[
-//     {
-//         model: Character,
-//         attributes: {
-//             exclude: ['createdAt', 'updatedAt']
-//         },
-//         through:{ 
-//             attributes: [], 
-//         },
-//     },
-//     {
-//         model: Genre,
-//         attributes: {
-//             exclude: ['createdAt', 'updatedAt']
-//         },
-//         through:{ 
-//             attributes: [], 
-//         },
-//         where: { name: queryParameterGenre }
-//     }
-// ]
-// ,order: [['title', queryParameterOrder]]
+
 
   if (errores.length > 0) {
     const error = errores.join(", ");
@@ -239,8 +217,53 @@ async function updateMovie(id, title, image, creationAge, rated, characters){
   return 'Movie/serie updated successfully.';
 }
 
+async function deleteMovie(id) {
+	console.log(id);
+	let searchId = await Movieserie.findAll({ where: { id } });
+	if (searchId.length > 0) {
+		await Movieserie.destroy({ where: { id } });
+	}else{
+		return "Invalid id"
+	}
+	return "Successfully deleted";
+}
+ 
+async function getMoviesById(id) {
+    const recipeFinded = await Movieserie.findByPk(id, {
+        include:[
+            {
+                model: Character,
+                attributes: {
+                    exclude: ['createdAt', 'updatedAt']
+                },
+                through:{ 
+                    attributes: [], 
+                },
+            },
+            {
+                model: Genre,
+                attributes: {
+                    exclude: ['createdAt', 'updatedAt']
+                },
+                through:{ 
+                    attributes: [], 
+                },
+            }
+            
+        ]
+    });
+    if (!recipeFinded) {
+      throw new Error("Invalid id");
+    }
+    console.log(recipeFinded);
+    return recipeFinded;
+  }
+
+
 module.exports = {
 	getMovieSeries,
-    postMovieSeries,
-    updateMovie
+	postMovieSeries,
+	updateMovie,
+	deleteMovie,
+  getMoviesById
 }

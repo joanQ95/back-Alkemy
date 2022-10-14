@@ -1,6 +1,6 @@
 const { postCharacter, getCharacters, getCharactersById, updateCharacter, deleteCharacter } = require('./characterController')
-const { getGenres } = require('./genreController')
-const { getMovieSeries, postMovieSeries, updateMovie } = require('./moviseriesController')
+const { getGenres, postGenres, updateGenre, deleteGenre, getGenreById } = require('./genreController')
+const { getMovieSeries, postMovieSeries, updateMovie, deleteMovie, getMoviesById } = require('./moviseriesController')
 
 const { loadDB } = require('./loadDB.js')
 
@@ -11,8 +11,14 @@ module.exports = {
     updateCharacter,
     deleteCharacter,
     getGenres,
+    postGenres,
+    updateGenre,
+    deleteGenre,
+    getGenreById,
     getMovieSeries,
     postMovieSeries,
     updateMovie,
+    deleteMovie,
+    getMoviesById,
     loadDB
 }

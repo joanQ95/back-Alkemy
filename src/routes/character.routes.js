@@ -9,7 +9,6 @@ router.get('/', auth, async (req, res) => {
 	const {name, age, movies} = req.query;
 	try{
 		let allCharacters = await getCharacters()
-		console.log("allCharacters",allCharacters)
 		if(name||age||movies) return res.status(201).json(await getCharacters(name, age, movies, allCharacters))
 		return res.status(201).json(allCharacters)
 		}
@@ -54,7 +53,7 @@ router.put("/:id", auth, async (req, res) => {
 		return res.status(202).json(await updateCharacter(id, name, age, weight, story, image))  
 		
 	  } catch (err) {
-		console.log(err);
+		return res.status(404).json(err.message)
 	  }
 
 })

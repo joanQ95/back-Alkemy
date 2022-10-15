@@ -28,7 +28,6 @@ async function postGenres(body){
     if(genreDbName.length) 
       'This title already exist, please insert another one.'
     const newGenre = await Genre.create({	name, image })
-    console.log(newGenre)
 
     return 'Genre created succesfully'
 }
@@ -106,7 +105,6 @@ async function getGenreById(id) {
 	if (!recipeFinded) {
 		throw new Error("Invalid id");
 	}
-	console.log(recipeFinded);
 	return recipeFinded;
 }
 

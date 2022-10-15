@@ -1,0 +1,487 @@
+{
+	"info": {
+		"_postman_id": "bfc07a7d-a728-474f-ab48-8c44b7899718",
+		"name": "ALKEMY-DISNEY",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20401690"
+	},
+	"item": [
+		{
+			"name": "CHARACTERS",
+			"item": [
+				{
+					"name": "ALL",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJuYW1lIjoiSm9hbiIsImVtYWlsIjoiam9hbi5xdWlzcGVAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkdi82eDZjL1gvNmVZRy5sNXdrOEtnT3l2R3phVmo2dzNlMllOOThXc3lvUW9ZTFVYNlNsOE8ifSwiaWF0IjoxNjY1ODU0NjY2LCJleHAiOjE2NjU5NDEwNjZ9.rC9_KYE8HSP4Crlys7nLbuFBMljQMt4s7qUhtNBXuhw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/characters",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"characters"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST CHARACTERS",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n    {\r\n        \"name\": \"Dog2\",\r\n        \"age\": 50,\r\n        \"weight\": 8.0,\r\n        \"story\": \"A funny mouse\",\r\n        \"image\": \"https://i.pinimg.com/564x/65/d6/cf/65d6cfcb2bb5193d6d160157b34b2bd0.jpg\"\r\n    }\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/characters",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"characters"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "characters/:idCharacter",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/characters/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"characters",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/characters/5",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Dog\",\r\n    \"age\": 80,\r\n    \"weight\": 10.0,\r\n    \"story\": \"A funny dog\",\r\n    \"image\": \"https://i.pinimg.com/564x/65/d6/cf/65d6cfcb2bb5193d6d160157b34b2bd0.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/characters/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"characters",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "characters/5",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/characters/7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"characters",
+								"7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "GENRES",
+			"item": [
+				{
+					"name": "all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/genres",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"genres"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "genres/",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Comedia\",\r\n    \"image\": \"nohaynada.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/genres",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"genres"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "genres/1",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Payaso\",\r\n    \"image\": \"nohaynada.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/genres/14",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"genres",
+								"14"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "genres/14",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "MOVIES-SERIES",
+			"item": [
+				{
+					"name": "ALL",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJuYW1lIjoiSm9hbiIsImVtYWlsIjoiam9hbi5xdWlzcGVAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkbGN3RUNwNkoxSFJ5a01QS2tXWHhGLnhnbnVraDlCcW5hdUVkTGVVdmhxaVp3RHdSbkFvaC4ifSwiaWF0IjoxNjY1ODU0ODE5LCJleHAiOjE2NjU5NDEyMTl9.CZc-nw4gAR1J91iNDvXlXrdazxMIMf55GX_RZ-5M7pE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/movies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post New Movie",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJuYW1lIjoiSm9hbiIsImVtYWlsIjoiam9hbi5xdWlzcGVAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkbGN3RUNwNkoxSFJ5a01QS2tXWHhGLnhnbnVraDlCcW5hdUVkTGVVdmhxaVp3RHdSbkFvaC4ifSwiaWF0IjoxNjY1ODU0ODE5LCJleHAiOjE2NjU5NDEyMTl9.CZc-nw4gAR1J91iNDvXlXrdazxMIMf55GX_RZ-5M7pE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Fantasia500\",\r\n    \"image\": \"https://i.pinimg.com/564x/65/d6/cf/65d6cfcb2bb5193d6d160157b34b2bd0.jpg\",\r\n    \"creationAge\": \"13/11/1940\",\r\n    \"rated\": \"5\",\r\n    \"genre\": [\r\n        {\r\n            \"name\": \"action\",\r\n            \"image\": \"https://i.pinimg.com/564x/65/d6/cf/65d6cfcb2bb5193d6d160157b34b2bd0.jpg\"\r\n        },\r\n        {\r\n            \"name\": \"adventures\",\r\n            \"image\": \"https://i.pinimg.com/564x/65/d6/cf/65d6cfcb2bb5193d6d160157b34b2bd0.jpg\"\r\n        }\r\n    ],\r\n    \"characters\": [\r\n        {\r\n            \"name\": \"Dog\",\r\n            \"age\": 50,\r\n            \"weight\": 8.0,\r\n            \"story\": \"A funny dog\",\r\n            \"image\": \"https://i.pinimg.com/564x/65/d6/cf/65d6cfcb2bb5193d6d160157b34b2bd0.jpg\"\r\n        },\r\n        {\r\n            \"name\": \"Mickey\",\r\n            \"age\": 50,\r\n            \"weight\": 8.0,\r\n            \"story\": \"A funny mouse\",\r\n            \"image\": \"https://i.pinimg.com/564x/65/d6/cf/65d6cfcb2bb5193d6d160157b34b2bd0.jpg\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/movies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "movies?name=",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/movies?genre=action&order=ASC",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"movies"
+							],
+							"query": [
+								{
+									"key": "genre",
+									"value": "action"
+								},
+								{
+									"key": "order",
+									"value": "ASC"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "put /movies/1",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Fantasia500\",\r\n    \"image\": \"https://i.pinimg.com/564x/65/d6/cf/65d6cfcb2bb5193d6d160157b34b2bd0.jpg\",\r\n    \"creationAge\": \"13/11/1980\",\r\n    \"rated\": \"3\",\r\n    \"genre\": [\r\n        {\r\n            \"name\": \"action\",\r\n            \"image\": \"https://i.pinimg.com/564x/65/d6/cf/65d6cfcb2bb5193d6d160157b34b2bd0.jpg\"\r\n        },\r\n        {\r\n            \"name\": \"adventures\",\r\n            \"image\": \"https://i.pinimg.com/564x/65/d6/cf/65d6cfcb2bb5193d6d160157b34b2bd0.jpg\"\r\n        }\r\n    ],\r\n    \"characters\": [\r\n        {\r\n            \"name\": \"Pluto\",\r\n            \"age\": 50,\r\n            \"weight\": 8.0,\r\n            \"story\": \"A funny dog\",\r\n            \"image\": \"https://i.pinimg.com/564x/65/d6/cf/65d6cfcb2bb5193d6d160157b34b2bd0.jpg\"\r\n        },\r\n        {\r\n            \"name\": \"Mickey\",\r\n            \"age\": 50,\r\n            \"weight\": 8.0,\r\n            \"story\": \"A funny mouse\",\r\n            \"image\": \"https://i.pinimg.com/564x/65/d6/cf/65d6cfcb2bb5193d6d160157b34b2bd0.jpg\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/movies/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"movies",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "movies/1",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/movies/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"movies",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "movies/?id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/movies/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"movies",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "AUTH",
+			"item": [
+				{
+					"name": "/auth/register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Joan\",\r\n    \"email\": \"joan.quispec@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/auth/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "auth/login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"joan.quispe@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/auth/signin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

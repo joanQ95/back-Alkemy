@@ -39,7 +39,7 @@ router.put("/:id", auth, async (req, res) => {
 		return res.status(202).json(await updateMovie(id, title, image, creationAge, rated, characters))  
 		
 	  } catch (err) {
-		console.log(err);
+		return res.status(404).json(err.message)
 	  }
 
 })

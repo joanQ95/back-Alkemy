@@ -27,12 +27,9 @@ async function getMovieSeries( queryParameterName, queryParameterGenre, queryPar
         ]
     })
     if (!allMovies) {
-        console.log("AQUI NO DEBERIA ENTRAR")
-        console.log(movieSerieDB)
         return movieSerieDB;
     }
     let jsonFiltered = allMovies;
-    console.log("HOLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", jsonFiltered);
     if(queryParameterGenre&&queryParameterOrder){
         jsonFiltered = await Movieserie.findAll({
             include:[
@@ -118,7 +115,6 @@ async function getMovieSeries( queryParameterName, queryParameterGenre, queryPar
           (e) => e.title.toLowerCase() == queryParameterName
         );
     }
-    console.log("que paso", jsonFiltered);
     return jsonFiltered
 }
 
@@ -135,7 +131,6 @@ async function postMovieSeries(body){
 		creationAge,
 		rated 
 	})
-    console.log(newMovie)
 
     let nameCharacter = characters.map(e=> e.name)
     await Character.bulkCreate(characters, {ignoreDuplicates: true})
@@ -156,7 +151,6 @@ async function postMovieSeries(body){
 
 
 async function updateMovie(id, title, image, creationAge, rated, characters){
-    console.log(id);
   let errores = [];
 	let searchId = await Movieserie.findAll({ where: { id } });
 	if (!searchId.length) {
@@ -169,7 +163,6 @@ async function updateMovie(id, title, image, creationAge, rated, characters){
     if (!/^[a-zA-Z0-9\s_\-\.\'\!\&\@\$]+$/.test(title)) {
       errores.push("title");
     } else {
-			console.log("no los entiendos")
       await Movieserie.update({ title }, { where: { id } });
     }
   }
@@ -218,7 +211,6 @@ async function updateMovie(id, title, image, creationAge, rated, characters){
 }
 
 async function deleteMovie(id) {
-	console.log(id);
 	let searchId = await Movieserie.findAll({ where: { id } });
 	if (searchId.length > 0) {
 		await Movieserie.destroy({ where: { id } });
@@ -255,7 +247,6 @@ async function getMoviesById(id) {
     if (!recipeFinded) {
       throw new Error("Invalid id");
     }
-    console.log(recipeFinded);
     return recipeFinded;
   }
 

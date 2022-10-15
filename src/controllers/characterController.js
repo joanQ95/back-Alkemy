@@ -16,7 +16,6 @@ async function postCharacter(body) {
     story,
     image,
   });
-  console.log(newCharacter);
   return "Character created succesfully";
 }
 
@@ -46,7 +45,6 @@ async function getCharacters( queryParameterName, queryParameterAge, queryParame
     );
   }
   if (queryParameterAge) {
-    console.log("jsonFiltered", jsonFiltered);
     jsonFiltered = jsonFiltered.filter((e) => e.age == queryParameterAge);
   }
   if (queryParameterMovies) {
@@ -55,12 +53,10 @@ async function getCharacters( queryParameterName, queryParameterAge, queryParame
         e.movies.toLowerCase().indexOf(queryParameterAge.toLowerCase()) != -1
     );
   }
-  console.log("que paso", jsonFiltered);
   return jsonFiltered;
 }
 
 async function getCharactersById(idCharacter) {
-  console.log(idCharacter);
   const recipeFinded = await Character.findByPk(idCharacter, {
     include: {
       model: Movieserie,
@@ -78,12 +74,10 @@ async function getCharactersById(idCharacter) {
   if (!recipeFinded) {
     throw new Error("Invalid id");
   }
-  console.log(recipeFinded);
   return recipeFinded;
 }
 
 async function updateCharacter(id, name, age, weight, story, image) {
-  console.log(id);
   let errores = [];
 	let searchId = await Character.findAll({ where: { id } });
 	if (!searchId.length) {
@@ -96,7 +90,6 @@ async function updateCharacter(id, name, age, weight, story, image) {
     if (!/^[a-zA-Z0-9\s_\-\.\'\!\&\@\$]+$/.test(name)) {
       errores.push("name");
     } else {
-			console.log("no los entiendos")
       await Character.update({ name }, { where: { id } });
     }
   }
@@ -136,7 +129,6 @@ async function updateCharacter(id, name, age, weight, story, image) {
 }
 
 async function deleteCharacter(id) {
-    console.log(id);
     let searchId = await Character.findAll({ where: { id } });
 	  if (searchId.length > 0) {
 		await Character.destroy({ where: { id } });

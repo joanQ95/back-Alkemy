@@ -14,7 +14,6 @@ function postJsonMovieSeries(movies){
             creationAge: movie.creationAge,
             rated: movie.rated 
         })
-        // console.log(newMovie)
         let nameCharacter = movie.characters.map(e=> e.name)
         await Character.bulkCreate(movie.characters, {ignoreDuplicates: true})
         let characterDb = await Character.findAll({

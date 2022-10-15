@@ -8,10 +8,20 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
       allowNull: false,
       unique: true,
+      validate: {
+        isAlpha: true,
+      }
     },
     image:{
-    type: DataTypes.STRING,
-    allowNull: false,
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        is: /^[a-zA-Z0-9\s_\-\.\'\!\&\@\/\:\$]+$/,
+        len: {
+          args: [2, 255],
+          msg: "Name must be at least 2 characters"
+        }
+      }
     }
   },{
     timestamps: false,

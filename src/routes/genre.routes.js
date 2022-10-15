@@ -1,9 +1,10 @@
 const { Router } = require('express');
 const { getGenres, postGenres, updateGenre, deleteGenre, getGenreById } = require('../controllers');
+const auth = require('../middlewares/auth');
 
 const router = Router();
 
-router.get('/', async (req, res) => {
+router.get('/', auth, async (req, res) => {
 	try{
 		return res.status(201).json(await getGenres())
 		}
@@ -12,7 +13,7 @@ router.get('/', async (req, res) => {
 	}
 })
 
-router.post('/', async (req, res) => {
+router.post('/', auth, async (req, res) => {
 	const {name, image} = req.body
 	try{
 		if(!name && !image){
@@ -26,7 +27,7 @@ router.post('/', async (req, res) => {
 	}
 })
 
-router.put("/:id", async (req, res) => {
+router.put("/:id", auth, async (req, res) => {
 	try {
 		const { id } = req.params;
 		const { name, image, movies } = req.body;
@@ -37,7 +38,7 @@ router.put("/:id", async (req, res) => {
 	  }
 })
 
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", auth, async (req, res) => {
 	try {
 		const { id } = req.params;
 		return res.status(202).json(await deleteGenre(id))  
@@ -47,7 +48,7 @@ router.delete("/:id", async (req, res) => {
 	}
 });
 
-router.get('/:id', async (req, res) => {
+router.get('/:id', auth, async (req, res) => {
 	let {id} = req.params
 	try{
 		if(id){

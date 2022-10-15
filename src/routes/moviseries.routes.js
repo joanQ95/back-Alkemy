@@ -1,9 +1,10 @@
 const { Router } = require('express');
 const { getMovieSeries, postMovieSeries, updateMovie, deleteMovie, getMoviesById } = require('../controllers');
+const auth = require('../middlewares/auth');
 
 const router = Router();
 
-router.get('/', async (req, res) => {
+router.get('/', auth, async (req, res) => {
 	const {name, genre, order} = req.query;
 	try{
 		let allmovies = await getMovieSeries()
@@ -17,7 +18,7 @@ router.get('/', async (req, res) => {
 	}
 })
 
-router.post('/', async (req, res) => {
+router.post('/', auth, async (req, res) => {
 	const {title, image, creationAge, rated, characters} = req.body
 	try{
 		if(!title && !image && !creationAge && !rated && !characters){
@@ -31,7 +32,7 @@ router.post('/', async (req, res) => {
 	}
 })
 
-router.put("/:id", async (req, res) => {
+router.put("/:id", auth, async (req, res) => {
 	try {
 		const { id } = req.params;
 		const { title, image, creationAge, rated, characters } = req.body;
@@ -43,7 +44,7 @@ router.put("/:id", async (req, res) => {
 
 })
 
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", auth, async (req, res) => {
 	try {
 		const { id } = req.params;
 		return res.status(202).json(await deleteMovie(id))  
@@ -53,7 +54,7 @@ router.delete("/:id", async (req, res) => {
 	}
   });
 
-router.get('/:id', async (req, res) => {
+router.get('/:id', auth, async (req, res) => {
 	let {id} = req.params
 	try{
 		if(id){

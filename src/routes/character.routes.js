@@ -1,10 +1,11 @@
 const { Router } = require('express');
 const { postCharacter, getCharacters, getCharactersById, updateCharacter, deleteCharacter } = require('../controllers');
+const auth = require('../middlewares/auth');
 
-const router = Router();
+const router = Router(); 
 
 //getAll // ?query
-router.get('/', async (req, res) => {
+router.get('/', auth, async (req, res) => {
 	const {name, age, movies} = req.query;
 	try{
 		let allCharacters = await getCharacters()
@@ -18,7 +19,7 @@ router.get('/', async (req, res) => {
 })
 
 
-router.get('/:id', async (req, res) => {
+router.get('/:id', auth, async (req, res) => {
 	let {id} = req.params
 	try{
 		if(id){
@@ -31,7 +32,7 @@ router.get('/:id', async (req, res) => {
 
 
  
-router.post('/', async (req,res)=> {
+router.post('/', auth, async (req,res)=> {
   
 	const {name, age, weight, story, image} = req.body
 	try{
@@ -46,7 +47,7 @@ router.post('/', async (req,res)=> {
 	}
 })
 
-router.put("/:id", async (req, res) => {
+router.put("/:id", auth, async (req, res) => {
 	try {
 		const { id } = req.params;
 		const { name, age, weight, story, image } = req.body;
@@ -58,7 +59,7 @@ router.put("/:id", async (req, res) => {
 
 })
 
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", auth, async (req, res) => {
 	try {
 		const { id } = req.params;
 		return res.status(202).json(await deleteCharacter(id))  

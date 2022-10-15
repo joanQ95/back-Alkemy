@@ -73,7 +73,7 @@ $ npm start
 ```
 
 # Consideraciones finales
-Si se quiere obtener un informe de lo obtenido se puede visualizar en el archivo informe.pdf:
+Si se quiere obtener un informe de lo obtenido se puede visualizar en el archivo informe-Alkemy.pdf:
 De la misma forma, se tiene acceso a postman mediante el siguiente archivo:
 ```
 ALKEMY-DISNEY.postman_collection.json

@@ -53,11 +53,21 @@
 				{
 					"name": "POST CHARACTERS",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJuYW1lIjoiSm9hbiIsImVtYWlsIjoiam9hbi5xdWlzcGVAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkdi82eDZjL1gvNmVZRy5sNXdrOEtnT3l2R3phVmo2dzNlMllOOThXc3lvUW9ZTFVYNlNsOE8ifSwiaWF0IjoxNjY1ODU0NjY2LCJleHAiOjE2NjU5NDEwNjZ9.rC9_KYE8HSP4Crlys7nLbuFBMljQMt4s7qUhtNBXuhw",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "\r\n    {\r\n        \"name\": \"Dog2\",\r\n        \"age\": 50,\r\n        \"weight\": 8.0,\r\n        \"story\": \"A funny mouse\",\r\n        \"image\": \"https://i.pinimg.com/564x/65/d6/cf/65d6cfcb2bb5193d6d160157b34b2bd0.jpg\"\r\n    }\r\n",
+							"raw": "\r\n    {\r\n        \"name\": \"Dogs\",\r\n        \"age\": 50,\r\n        \"weight\": 8.0,\r\n        \"story\": \"A funny mouse\",\r\n        \"image\": \"https://i.pinimg.com/564x/65/d6/cf/65d6cfcb2bb5193d6d160157b34b2bd0.jpg\"\r\n    }\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -81,6 +91,16 @@
 				{
 					"name": "characters/:idCharacter",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJuYW1lIjoiSm9hbiIsImVtYWlsIjoiam9hbi5xdWlzcGVAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkdi82eDZjL1gvNmVZRy5sNXdrOEtnT3l2R3phVmo2dzNlMllOOThXc3lvUW9ZTFVYNlNsOE8ifSwiaWF0IjoxNjY1ODU0NjY2LCJleHAiOjE2NjU5NDEwNjZ9.rC9_KYE8HSP4Crlys7nLbuFBMljQMt4s7qUhtNBXuhw",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -101,6 +121,16 @@
 				{
 					"name": "/characters/5",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJuYW1lIjoiSm9hbiIsImVtYWlsIjoiam9hbi5xdWlzcGVAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkdi82eDZjL1gvNmVZRy5sNXdrOEtnT3l2R3phVmo2dzNlMllOOThXc3lvUW9ZTFVYNlNsOE8ifSwiaWF0IjoxNjY1ODU0NjY2LCJleHAiOjE2NjU5NDEwNjZ9.rC9_KYE8HSP4Crlys7nLbuFBMljQMt4s7qUhtNBXuhw",
+									"type": "string"
+								}
+							]
+						},
 						"method": "PUT",
 						"header": [],
 						"body": {
@@ -130,6 +160,16 @@
 				{
 					"name": "characters/5",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJuYW1lIjoiSm9hbiIsImVtYWlsIjoiam9hbi5xdWlzcGVAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkdi82eDZjL1gvNmVZRy5sNXdrOEtnT3l2R3phVmo2dzNlMllOOThXc3lvUW9ZTFVYNlNsOE8ifSwiaWF0IjoxNjY1ODU0NjY2LCJleHAiOjE2NjU5NDEwNjZ9.rC9_KYE8HSP4Crlys7nLbuFBMljQMt4s7qUhtNBXuhw",
+									"type": "string"
+								}
+							]
+						},
 						"method": "DELETE",
 						"header": [],
 						"url": {
@@ -146,6 +186,41 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "characters?name=",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJuYW1lIjoiSm9hbiIsImVtYWlsIjoiam9hbi5xdWlzcGVAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkdi82eDZjL1gvNmVZRy5sNXdrOEtnT3l2R3phVmo2dzNlMllOOThXc3lvUW9ZTFVYNlNsOE8ifSwiaWF0IjoxNjY1ODU0NjY2LCJleHAiOjE2NjU5NDEwNjZ9.rC9_KYE8HSP4Crlys7nLbuFBMljQMt4s7qUhtNBXuhw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/characters?name=tod",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"characters"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "tod"
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -155,6 +230,16 @@
 				{
 					"name": "all",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJuYW1lIjoiSm9hbiIsImVtYWlsIjoiam9hbi5xdWlzcGVAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkdi82eDZjL1gvNmVZRy5sNXdrOEtnT3l2R3phVmo2dzNlMllOOThXc3lvUW9ZTFVYNlNsOE8ifSwiaWF0IjoxNjY1ODU0NjY2LCJleHAiOjE2NjU5NDEwNjZ9.rC9_KYE8HSP4Crlys7nLbuFBMljQMt4s7qUhtNBXuhw",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -174,6 +259,16 @@
 				{
 					"name": "genres/",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJuYW1lIjoiSm9hbiIsImVtYWlsIjoiam9hbi5xdWlzcGVAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkdi82eDZjL1gvNmVZRy5sNXdrOEtnT3l2R3phVmo2dzNlMllOOThXc3lvUW9ZTFVYNlNsOE8ifSwiaWF0IjoxNjY1ODU0NjY2LCJleHAiOjE2NjU5NDEwNjZ9.rC9_KYE8HSP4Crlys7nLbuFBMljQMt4s7qUhtNBXuhw",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
@@ -202,6 +297,16 @@
 				{
 					"name": "genres/1",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJuYW1lIjoiSm9hbiIsImVtYWlsIjoiam9hbi5xdWlzcGVAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkdi82eDZjL1gvNmVZRy5sNXdrOEtnT3l2R3phVmo2dzNlMllOOThXc3lvUW9ZTFVYNlNsOE8ifSwiaWF0IjoxNjY1ODU0NjY2LCJleHAiOjE2NjU5NDEwNjZ9.rC9_KYE8HSP4Crlys7nLbuFBMljQMt4s7qUhtNBXuhw",
+									"type": "string"
+								}
+							]
+						},
 						"method": "PUT",
 						"header": [],
 						"body": {
@@ -214,7 +319,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3001/genres/14",
+							"raw": "http://localhost:3001/genres/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -222,7 +327,7 @@
 							"port": "3001",
 							"path": [
 								"genres",
-								"14"
+								"1"
 							]
 						}
 					},
@@ -231,8 +336,30 @@
 				{
 					"name": "genres/14",
 					"request": {
-						"method": "GET",
-						"header": []
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJuYW1lIjoiSm9hbiIsImVtYWlsIjoiam9hbi5xdWlzcGVAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkdi82eDZjL1gvNmVZRy5sNXdrOEtnT3l2R3phVmo2dzNlMllOOThXc3lvUW9ZTFVYNlNsOE8ifSwiaWF0IjoxNjY1ODU0NjY2LCJleHAiOjE2NjU5NDEwNjZ9.rC9_KYE8HSP4Crlys7nLbuFBMljQMt4s7qUhtNBXuhw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/genres/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"genres",
+								"1"
+							]
+						}
 					},
 					"response": []
 				}
@@ -323,10 +450,20 @@
 				{
 					"name": "movies?name=",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJuYW1lIjoiSm9hbiIsImVtYWlsIjoiam9hbi5xdWlzcGVAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkdi82eDZjL1gvNmVZRy5sNXdrOEtnT3l2R3phVmo2dzNlMllOOThXc3lvUW9ZTFVYNlNsOE8ifSwiaWF0IjoxNjY1ODU0NjY2LCJleHAiOjE2NjU5NDEwNjZ9.rC9_KYE8HSP4Crlys7nLbuFBMljQMt4s7qUhtNBXuhw",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3001/movies?genre=action&order=ASC",
+							"raw": "http://localhost:3001/movies?genre=adventures&order=ASC",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -338,7 +475,7 @@
 							"query": [
 								{
 									"key": "genre",
-									"value": "action"
+									"value": "adventures"
 								},
 								{
 									"key": "order",
@@ -352,11 +489,21 @@
 				{
 					"name": "put /movies/1",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJuYW1lIjoiSm9hbiIsImVtYWlsIjoiam9hbi5xdWlzcGVAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkdi82eDZjL1gvNmVZRy5sNXdrOEtnT3l2R3phVmo2dzNlMllOOThXc3lvUW9ZTFVYNlNsOE8ifSwiaWF0IjoxNjY1ODU0NjY2LCJleHAiOjE2NjU5NDEwNjZ9.rC9_KYE8HSP4Crlys7nLbuFBMljQMt4s7qUhtNBXuhw",
+									"type": "string"
+								}
+							]
+						},
 						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"title\": \"Fantasia500\",\r\n    \"image\": \"https://i.pinimg.com/564x/65/d6/cf/65d6cfcb2bb5193d6d160157b34b2bd0.jpg\",\r\n    \"creationAge\": \"13/11/1980\",\r\n    \"rated\": \"3\",\r\n    \"genre\": [\r\n        {\r\n            \"name\": \"action\",\r\n            \"image\": \"https://i.pinimg.com/564x/65/d6/cf/65d6cfcb2bb5193d6d160157b34b2bd0.jpg\"\r\n        },\r\n        {\r\n            \"name\": \"adventures\",\r\n            \"image\": \"https://i.pinimg.com/564x/65/d6/cf/65d6cfcb2bb5193d6d160157b34b2bd0.jpg\"\r\n        }\r\n    ],\r\n    \"characters\": [\r\n        {\r\n            \"name\": \"Pluto\",\r\n            \"age\": 50,\r\n            \"weight\": 8.0,\r\n            \"story\": \"A funny dog\",\r\n            \"image\": \"https://i.pinimg.com/564x/65/d6/cf/65d6cfcb2bb5193d6d160157b34b2bd0.jpg\"\r\n        },\r\n        {\r\n            \"name\": \"Mickey\",\r\n            \"age\": 50,\r\n            \"weight\": 8.0,\r\n            \"story\": \"A funny mouse\",\r\n            \"image\": \"https://i.pinimg.com/564x/65/d6/cf/65d6cfcb2bb5193d6d160157b34b2bd0.jpg\"\r\n        }\r\n    ]\r\n}",
+							"raw": "{\r\n    \"title\": \"Fantasia400\",\r\n    \"image\": \"https://i.pinimg.com/564x/65/d6/cf/65d6cfcb2bb5193d6d160157b34b2bd0.jpg\",\r\n    \"creationAge\": \"13/11/1980\",\r\n    \"rated\": \"3\",\r\n    \"genre\": [\r\n        {\r\n            \"name\": \"action\",\r\n            \"image\": \"https://i.pinimg.com/564x/65/d6/cf/65d6cfcb2bb5193d6d160157b34b2bd0.jpg\"\r\n        },\r\n        {\r\n            \"name\": \"adventures\",\r\n            \"image\": \"https://i.pinimg.com/564x/65/d6/cf/65d6cfcb2bb5193d6d160157b34b2bd0.jpg\"\r\n        }\r\n    ],\r\n    \"characters\": [\r\n        {\r\n            \"name\": \"Pluto\",\r\n            \"age\": 50,\r\n            \"weight\": 8.0,\r\n            \"story\": \"A funny dog\",\r\n            \"image\": \"https://i.pinimg.com/564x/65/d6/cf/65d6cfcb2bb5193d6d160157b34b2bd0.jpg\"\r\n        },\r\n        {\r\n            \"name\": \"Mickey\",\r\n            \"age\": 50,\r\n            \"weight\": 8.0,\r\n            \"story\": \"A funny mouse\",\r\n            \"image\": \"https://i.pinimg.com/564x/65/d6/cf/65d6cfcb2bb5193d6d160157b34b2bd0.jpg\"\r\n        }\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -381,6 +528,16 @@
 				{
 					"name": "movies/1",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJuYW1lIjoiSm9hbiIsImVtYWlsIjoiam9hbi5xdWlzcGVAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkdi82eDZjL1gvNmVZRy5sNXdrOEtnT3l2R3phVmo2dzNlMllOOThXc3lvUW9ZTFVYNlNsOE8ifSwiaWF0IjoxNjY1ODU0NjY2LCJleHAiOjE2NjU5NDEwNjZ9.rC9_KYE8HSP4Crlys7nLbuFBMljQMt4s7qUhtNBXuhw",
+									"type": "string"
+								}
+							]
+						},
 						"method": "DELETE",
 						"header": [],
 						"url": {
@@ -399,8 +556,18 @@
 					"response": []
 				},
 				{
-					"name": "movies/?id",
+					"name": "movies/:id",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJuYW1lIjoiSm9hbiIsImVtYWlsIjoiam9hbi5xdWlzcGVAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkdi82eDZjL1gvNmVZRy5sNXdrOEtnT3l2R3phVmo2dzNlMllOOThXc3lvUW9ZTFVYNlNsOE8ifSwiaWF0IjoxNjY1ODU0NjY2LCJleHAiOjE2NjU5NDEwNjZ9.rC9_KYE8HSP4Crlys7nLbuFBMljQMt4s7qUhtNBXuhw",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -459,7 +626,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"joan.quispe@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+							"raw": "{\r\n    \"email\": \"joan.quispec@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
